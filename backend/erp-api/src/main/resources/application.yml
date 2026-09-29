@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: erp-api
+  profiles:
+    default: local
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate.SQL: INFO
+server:
+  address: 127.0.0.1
+  port: 8081
+  error:
+    include-message: never
+app:
+  jwt:
+    issuer: company-erp
+    ttl-minutes: 60

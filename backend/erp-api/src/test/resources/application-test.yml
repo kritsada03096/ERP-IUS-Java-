@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: ${TEST_DB_URL:jdbc:h2:mem:erp;MODE=PostgreSQL;DB_CLOSE_DELAY=-1}
+    username: ${TEST_DB_USERNAME:sa}
+    password: ${TEST_DB_PASSWORD:}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+app:
+  jwt:
+    secret: test-only-erp-secret-at-least-32-bytes-long
+  cors:
+    allowed-origin: http://localhost:4200

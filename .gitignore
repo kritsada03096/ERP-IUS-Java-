@@ -1,0 +1,13 @@
+# Local tools and secrets
+.tools/
+.env
+.env.*
+!.env.example
+*.log
+backend/**/target/
+frontend/**/node_modules/
+frontend/**/dist/
+frontend/**/.angular/
+.idea/
+.vscode/
+.DS_Store

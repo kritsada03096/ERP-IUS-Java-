@@ -1,0 +1,19 @@
+name: company-erp
+services:
+  postgres:
+    image: postgres:17
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_DB: company_erp
+      POSTGRES_USER: erp
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-erp_local}
+    volumes:
+      - erp_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U erp -d company_erp"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  erp_data:
